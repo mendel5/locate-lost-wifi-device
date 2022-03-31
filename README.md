@@ -1,10 +1,25 @@
 # locate-lost-wifi-device
 How to physically locate a lost WiFi access point that still sends a WiFi signal
 
-## Locate Lost Wifi Device
---> move to own repository "locate-lost-wifi-device"
+Download Kali Linux ("Live Boot" version) from https://www.kali.org/get-kali/#kali-live
 
-How to physically locate a lost access point that still sends a Wifi signal?
+Enter the following commands:
+```
+sudo airmon-ng
+--> shows a list of all WiFi devices installed and accessible to Kali Linux
+
+sudo airmon-ng start wlan0
+--> replace wlan0 with the name of the correct WiFi "interface"
+
+sudo airmon-ng
+--> the interface should now be called "wlan0mon"
+
+sudo airodump-ng wlan0mon
+```
+Try to find the lost WiFi device by walking around and trying to make the `PWR` value go to 0 (zero).
+
+
+## Links
 - WifiInfoView by NirSoft
 - https://www.nirsoft.net/utils/wifi_information_view.html
 - https://play.google.com/store/apps/details?id=com.vrem.wifianalyzer
@@ -22,15 +37,3 @@ How to physically locate a lost access point that still sends a Wifi signal?
 - https://www.youtube.com/watch?v=uKZb3D-PHS0 HakByte: Advanced WiFi Scanning with Airodump-ng
 - https://www.aircrack-ng.org/doku.php?id=newbie_guide
 - https://www.aircrack-ng.org/doku.php?id=airodump-ng
-
-```
-sudo airmon-ng
-
-sudo airmon-ng start wlan0
-(replace wlan0 with the name of the "interface")
-
-sudo airmon-ng
---> the interface should now be called "wlan0mon"
-
-sudo airodump-ng wlan0mon
-```
