@@ -15,9 +15,8 @@ sudo airmon-ng
 --> the interface should now be called "wlan0mon"
 
 sudo airodump-ng wlan0mon
+--> Try to find the lost WiFi device by walking around and trying to make the `PWR` value go to 0 (zero).
 ```
-Try to find the lost WiFi device by walking around and trying to make the `PWR` value go to 0 (zero).
-
 
 ## Links
 - WifiInfoView by NirSoft
